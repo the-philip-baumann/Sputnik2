@@ -1,0 +1,22 @@
+<div class="container" *ngIf="!galleryView.displayDetailedImageView">
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <div class="img-orientation">
+        <div class="img-container row" *ngFor="let image of images; let i = index" (click)="openDetailedView(image, i)">
+          <img src="{{image.imgId}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="centered-image" *ngIf="galleryView.displayDetailedImageView">
+  <img src="{{images[imagePointer].imgId}}">
+  <div class="centered-toolbar">
+    <img class="chevrons" src="assets/icons/chevron-left.png" (click)="performAction(2)">
+    <img class="chevrons" src="assets/icons/pause.png" (click)="performAction(3)">
+    <img class="chevrons" src="assets/icons/chevron-right.png" (click)="performAction(1)">
+  </div>
+</div>
+
+

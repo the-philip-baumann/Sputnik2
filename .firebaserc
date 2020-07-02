@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sputnik2-b0044": {
+      "hosting": {
+        "Sputnik2": [
+          "sputnik2-b0044"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="col-md-6 offset-3">
+  <div class="title">
+    <h1>Blog</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 flex-box">
+      <div class="card card-size" *ngFor="let blog of blogs | async" (click)="navigateToDetailView(blog)">
+        <img class="card-img"
+             src="{{blog.imgId}}"
+             alt="Bologna">
+        <div class="card-body">
+          <h4 class="card-title" [innerHTML]="blog.title"></h4>
+          <small class="text-muted cat">
+            <i class="far fa-clock text-info"></i>
+            <i class="fas fa-users text-info"></i>
+          </small>
+          <p class="card-text" [innerHTML]="blog.description"></p>
+        </div>
+        <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+          <div class="views" [innerHTML]="blog.date">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row float-right">
+    <button routerLink="/create-post" class="btn btn-info">Add post</button>
+  </div>
+</div>
